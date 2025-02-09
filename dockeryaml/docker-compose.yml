@@ -1,0 +1,14 @@
+services:
+  backend:
+    build: ./poker-solver-backend
+    ports:
+      - "8000:8000"
+    restart: always
+
+  frontend:
+    build: ./poker-solver-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    restart: always
