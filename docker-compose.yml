@@ -9,6 +9,10 @@ services:
     build: ./poker-solver-frontend
     ports:
       - "3000:3000"
+    environment:
+      - VITE_PORT=3000
+      - VITE_HOST=0.0.0.0
+    command: npm run dev -- --host 0.0.0.0
     depends_on:
       - backend
     restart: always
